@@ -1,0 +1,58 @@
+/* Premium card effects */
+.card-premium {
+  background: linear-gradient(145deg, #ffffff, #f5f5f5);
+  box-shadow: 
+    20px 20px 60px rgba(0, 0, 0, 0.05),
+    -20px -20px 60px rgba(255, 255, 255, 0.8);
+}
+
+.card-premium:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    25px 25px 75px rgba(0, 0, 0, 0.1),
+    -25px -25px 75px rgba(255, 255, 255, 0.9);
+}
+
+.luxury-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: luxuryShimmer 3s infinite linear;
+}
+
+.luxury-card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.luxury-card-3d:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 
+    20px 20px 60px rgba(177, 124, 63, 0.2),
+    -20px -20px 60px rgba(255, 255, 255, 0.8);
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}

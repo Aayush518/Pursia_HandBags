@@ -1,0 +1,62 @@
+/* Custom Cursor Styles */
+@media (min-width: 1024px) {
+  .luxury-cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: #B17C3F;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: all 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translate(-50%, -50%);
+  }
+
+  .luxury-cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #B17C3F;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    mix-blend-mode: difference;
+    transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translate(-50%, -50%);
+  }
+
+  /* Cursor interactions */
+  a:hover ~ .luxury-cursor-dot,
+  button:hover ~ .luxury-cursor-dot,
+  [role="button"]:hover ~ .luxury-cursor-dot {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: #B17C3F;
+    mix-blend-mode: normal;
+  }
+
+  a:hover ~ .luxury-cursor-outline,
+  button:hover ~ .luxury-cursor-outline,
+  [role="button"]:hover ~ .luxury-cursor-outline {
+    transform: translate(-50%, -50%) scale(1.5);
+    border-color: #B17C3F;
+    mix-blend-mode: normal;
+  }
+
+  /* Hide default cursor */
+  html, body {
+    cursor: none !important;
+  }
+
+  a, button, [role="button"] {
+    cursor: none !important;
+  }
+}
+
+/* Disable custom cursor on mobile/tablet */
+@media (max-width: 1023px) {
+  .luxury-cursor-dot,
+  .luxury-cursor-outline {
+    display: none;
+  }
+}

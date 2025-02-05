@@ -1,0 +1,217 @@
+/* Add these new premium effects to the existing CSS */
+
+/* Premium 3D Card Effect */
+.luxury-card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.luxury-card-3d:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 
+    20px 20px 60px rgba(177, 124, 63, 0.2),
+    -20px -20px 60px rgba(255, 255, 255, 0.8);
+}
+
+/* Premium Text Animation */
+.luxury-text-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: textReveal 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Premium Button Effect */
+.luxury-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.luxury-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease;
+}
+
+.luxury-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Premium Image Hover */
+.luxury-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.luxury-image:hover::after {
+  transform: translateX(100%);
+}
+
+/* Premium Scroll Animation */
+.luxury-scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.luxury-scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Premium Loading Effect */
+.luxury-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-loading::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(177, 124, 63, 0.2) 50%, 
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: luxuryLoading 1.5s infinite;
+}
+
+@keyframes luxuryLoading {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Premium Cursor Effect */
+.luxury-cursor {
+  cursor: none;
+}
+
+.luxury-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #B17C3F;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+.luxury-cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #B17C3F;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.2s ease;
+}
+
+/* Premium Parallax Effect */
+.luxury-parallax {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.luxury-parallax-layer {
+  transition: transform 0.1s ease;
+}
+
+/* Premium Text Gradient */
+.luxury-text-gradient {
+  background: linear-gradient(135deg, #B17C3F 0%, #96683A 50%, #B17C3F 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 4s linear infinite;
+}
+
+@keyframes textGradient {
+  to { background-position: 200% center; }
+}
+
+/* Premium Border Animation */
+.luxury-border {
+  position: relative;
+}
+
+.luxury-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #B17C3F, #96683A, #B17C3F) border-box;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: borderRotate 4s linear infinite;
+}
+
+@keyframes borderRotate {
+  to { transform: rotate(360deg); }
+}
+
+/* Premium Shadow Effect */
+.luxury-shadow {
+  box-shadow: 
+    0 10px 30px rgba(177, 124, 63, 0.1),
+    0 20px 60px rgba(177, 124, 63, 0.05);
+  transition: all 0.4s ease;
+}
+
+.luxury-shadow:hover {
+  box-shadow: 
+    0 20px 40px rgba(177, 124, 63, 0.2),
+    0 30px 70px rgba(177, 124, 63, 0.1);
+}
+
+/* Premium Backdrop Effect */
+.luxury-backdrop {
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Premium Scroll Progress */
+.luxury-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #B17C3F, #96683A);
+  transform-origin: 0%;
+  z-index: 9999;
+}

@@ -1,0 +1,39 @@
+/* Premium Loading Effects */
+.luxury-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-loading::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(177, 124, 63, 0.2) 50%, 
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: luxuryLoading 1.5s infinite;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, 
+    #f0f0f0 25%, 
+    #e0e0e0 50%, 
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(177, 124, 63, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shine 1.5s infinite;
+}

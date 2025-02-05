@@ -1,0 +1,26 @@
+/* Premium Text Effects */
+.luxury-text-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: textReveal 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.luxury-text-gradient {
+  background: linear-gradient(135deg, #B17C3F 0%, #96683A 50%, #B17C3F 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 4s linear infinite;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #B17C3F 0%, #96683A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
